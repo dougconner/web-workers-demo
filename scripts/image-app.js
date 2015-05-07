@@ -59,11 +59,16 @@
     //   imageData.data[i * 4 + 3] = pixel[3];
     // }
 
+    console.log("posted msg to worker");
     myWorker.onmessage = function(e) {
       toggleButtonsAbledness();
       var image = e.data;
-      if (image) return ctx.putImageData(imageData, 0, 0);
-      console.log("No manipulated image returned");
+      if (image) {
+        return ctx.putImageData(imageData, 0, 0);
+        console.log("image returned");
+      } else {
+        console.log("No manipulated image returned");
+      }
 
     }
 
