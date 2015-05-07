@@ -1,8 +1,19 @@
 
 this.onmessage = function(e) {
-  importScripts('imageManips.js');
+  // importScripts('imageManips.js');
+  var data = e.data;
   var imageData = e.data.imageData;
   var type = e.data.type;
+
+  if (data.url) {
+    var url = data.url.href;
+    var index = url.indexOf('index.html');
+    if (index != -1) {
+      url = url.substring(0, index);
+    }
+    importScripts(url + 'imageManips.js');
+  }
+
 
   try {
     length = imageData.data.length / 4;
