@@ -65,7 +65,7 @@
       toggleButtonsAbledness();
       var image = e.data;
       if (image) {
-        return ctx.putImageData(imageData, 0, 0);
+        return ctx.putImageData(image, 0, 0);
         console.log("image returned");
       } else {
         console.log("No manipulated image returned");
