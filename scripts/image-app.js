@@ -39,6 +39,7 @@
   function manipulateImage(type) {
     var a, b, g, i, imageData, j, length, pixel, r, ref;
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    console.log("imageData in = " + imageData);
 
     toggleButtonsAbledness();
 
